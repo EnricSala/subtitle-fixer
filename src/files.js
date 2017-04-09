@@ -15,7 +15,7 @@ function writeTo(file, stream) {
     writer.on('error', console.error);
     stream.subscribe(
         line => writer.write(line + '\n'),
-        err => console.error,
+        err => console.error(err),
         () => writer.end()
     );
 }
